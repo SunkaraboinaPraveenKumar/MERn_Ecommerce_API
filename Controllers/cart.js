@@ -9,7 +9,7 @@ export const addToCart = async (req, res) => {
     if (!cart) {
         cart = new Cart({ userId, items: [] })
     }
-    const itemIndex = cart.items.findIndex((item) => item.productId.toString() === productId)
+    const itemIndex = cart.items.findIndex((item) => item.productId?.toString() === productId)
 
     if (itemIndex != -1) {
         cart.items[itemIndex].qty += qty;
@@ -41,7 +41,7 @@ export const removeProductFromCart = async (req, res) => {
     if (!cart) {
         return res.json({ message: 'Cart not Found' })
     }
-    cart.items = cart.items.filter((item) => item.productId.toString() !== productId)
+    cart.items = cart.items.filter((item) => item.productId?.toString() !== productId)
     await cart.save();
     res.json({ message: "product removed from cart" })
 }
@@ -70,7 +70,7 @@ export const decreaseProductQty = async (req, res) => {
     if (!cart) {
         cart = new Cart({ userId, items: [] })
     }
-    const itemIndex = cart.items.findIndex((item) => item.productId.toString() === productId)
+    const itemIndex = cart.items.findIndex((item) => item.productId?.toString() === productId)
 
     if (itemIndex > -1) {
         const item = cart.items[itemIndex]

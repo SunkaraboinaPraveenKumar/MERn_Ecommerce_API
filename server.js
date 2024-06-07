@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import bodyParser from 'express'
+import bodyParser from 'body-parser'
 import userRouter from './Routes/user.js'
 import productRouter from'./Routes/product.js'
 import cartRouter from './Routes/cart.js'
