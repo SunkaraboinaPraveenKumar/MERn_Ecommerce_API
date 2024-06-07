@@ -12,7 +12,7 @@ const app = express();
 app.use(bodyParser.json())
 
 app.use(cors({
-  origin:'https://merne-commerce-praveen-6xi1.vercel.app/',
+  origin:true,
   methods:["GET","POST","PUT","DELETE"],
   credentials:true
 }))
