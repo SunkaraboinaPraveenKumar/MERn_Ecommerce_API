@@ -12,7 +12,7 @@ const app = express();
 app.use(bodyParser.json())
 
 app.use(cors({
-  origin:'https://mern-ecommerce-api1.onrender.com/api',
+  origin:true,
   methods:["GET","POST","PUT","DELETE"],
   credentials:true
 }))

@@ -10,6 +10,6 @@ export const addAddress = async (req,res)=>{
 }
 
 export const getAddress=async (req,res)=>{
-    let addresses=await Address.find().sort({createdAt:-1})
+    let addresses=await Address.find({userId:req.user}).sort({createdAt:-1})
     res.json({message:'address',userAddress:addresses[0],success:true})
 }
